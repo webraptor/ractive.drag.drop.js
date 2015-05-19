@@ -7,8 +7,8 @@
  * @author  Nijiko Yonskai
  * @copyright  2013
  */
-Ractive.eventDefinitions.draggable = function ( node, fire ) {
-  var $self = Ractive.eventDefinitions.draggable;
+Ractive.events.draggable = function ( node, fire ) {
+  var $self = Ractive.events.draggable;
 
   var foreach = function (n, next) {
     if (n.length) Array.prototype.forEach.call(n, next);
@@ -60,5 +60,5 @@ Ractive.eventDefinitions.draggable = function ( node, fire ) {
   };
 };
 
-Ractive.eventDefinitions.draggable.current = null;
-Ractive.eventDefinitions.draggable.previous = null;
+Ractive.events.draggable.current = null;
+Ractive.events.draggable.previous = null;
