@@ -38,24 +38,26 @@ Ractive.events.draggable = function ( node, fire ) {
       };
     }
   };
-  
+
+  var drag_start, drag_enter, drag_over, drag_leave, drag_drop, drag_end;
+
   node.draggable = true;
-  node.addEventListener('dragstart', Drag.event('drag_start'));
-  node.addEventListener('dragenter', Drag.event('drag_enter'));
-  node.addEventListener('dragover', Drag.event('drag_over'));
-  node.addEventListener('dragleave', Drag.event('drag_leave'));
-  node.addEventListener('drop', Drag.event('drag_drop'));
-  node.addEventListener('dragend', Drag.event('drag_end'));
+  node.addEventListener('dragstart', drag_start = Drag.event('drag_start'));
+  node.addEventListener('dragenter', drag_enter = Drag.event('drag_enter'));
+  node.addEventListener('dragover', drag_over = Drag.event('drag_over'));
+  node.addEventListener('dragleave', drag_leave = Drag.event('drag_leave'));
+  node.addEventListener('drop', drag_drop = Drag.event('drag_drop'));
+  node.addEventListener('dragend', drag_end = Drag.event('drag_end'));
 
   return {
     teardown: function () {
       node.draggable = true;
-      node.removeEventListener('dragstart', Drag.event('drag_start'));
-      node.removeEventListener('dragenter', Drag.event('drag_enter'));
-      node.removeEventListener('dragover', Drag.event('drag_over'));
-      node.removeEventListener('dragleave', Drag.event('drag_leave'));
-      node.removeEventListener('drop', Drag.event('drag_drop'));
-      node.removeEventListener('dragend', Drag.event('drag_end'));
+      node.removeEventListener('dragstart', drag_start);
+      node.removeEventListener('dragenter', drag_enter);
+      node.removeEventListener('dragover', drag_over);
+      node.removeEventListener('dragleave', drag_leave);
+      node.removeEventListener('drop', drag_drop);
+      node.removeEventListener('dragend', drag_end);
     }
   };
 };
