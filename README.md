@@ -9,7 +9,7 @@ After including [ractive](https://github.com/Rich-Harris/Ractive) and `ractive.d
 **Template**
 
 ```html
-<ul proxy-dragndrop='dragndrop-items'>
+<ul on-dragndrop='dragndrop-items'>
   {{#items:i}}
     <li>{{items[i]}}</li>
   {{/items}}
@@ -42,7 +42,7 @@ ractive.on('dragndrop-items', function (event) {
 
 ## Event Object
 
-- `name` Event name, underscore seperated: `drag_drop`, `drag_start`
-- `type` Event type: `drop`, `start`
+- `name` Event name, underscore seperated: `drag_start`, `drag_enter`, `drag_over`, `drag_leave`, `drag_drop`, `drag_end`
+- `type` Event type: `start`, `enter`, `over`, `leave`, `drop`, `end`
 - `target` Element being dragged or dropped.
 - `original` Native DOM Event
