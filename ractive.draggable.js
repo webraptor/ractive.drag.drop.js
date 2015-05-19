@@ -10,10 +10,6 @@
 Ractive.events.draggable = function ( node, fire ) {
   var $self = Ractive.events.draggable;
 
-  var foreach = function (n, next) {
-    if (n.length) Array.prototype.forEach.call(n, next);
-  };
-
   var Drag = {
     event: function (name) {
       return function (event) {
