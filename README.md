@@ -9,9 +9,9 @@ After including [ractive](https://github.com/Rich-Harris/Ractive) and `ractive.d
 **Template**
 
 ```html
-<ul on-dragndrop='dragndrop-items' dragndrop-copy>
+<ul>
   {{#items:i}}
-    <li>{{items[i]}}</li>
+    <li on-dragndrop='dragndrop-items' dragndrop-copy>{{items[i]}}</li>
   {{/items}}
 </ul>
 ```   
