@@ -1,17 +1,17 @@
-# ractive.drag.drop.js
+# ractive.dragging.js
 
-Native HTML5 Drag N' Drop ractive event definition.
+Native HTML5 Dragging ractive event definition. Handles all drag events but drop.
 
 ## Usage
 
-After including [ractive](https://github.com/Rich-Harris/Ractive) and `ractive.drag.drop.js`:
+After including [ractive](https://github.com/Rich-Harris/Ractive) and `ractive.dragging.js`:
 
 **Template**
 
 ```html
 <ul>
   {{#items:i}}
-    <li on-dragndrop='dragndrop-items' dragndrop-copy>{{items[i]}}</li>
+    <li on-dragging='dragging-item'>{{items[i]}}</li>
   {{/items}}
 </ul>
 ```   
@@ -35,14 +35,14 @@ ractive = new Ractive({
 Now any drag / drop action can be caught:
 
 ```js
-ractive.on('dragndrop-items', function (event) {
+ractive.on('dragging-item', function (event) {
   console.log(event);
 });
 ```
 
 ## Event Object
 
-- `name` Event name, underscore seperated: `drag_start`, `drag_enter`, `drag_over`, `drag_leave`, `drag_drop`, `drag_end`
-- `type` Event type: `start`, `enter`, `over`, `leave`, `drop`, `end`
+- `name` Event name
+- `type` Event type
 - `target` Element being dragged or dropped.
 - `original` Native DOM Event

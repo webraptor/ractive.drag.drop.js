@@ -1,13 +1,14 @@
 /**
- * Drag N' Drop Ractive Event
+ * Dragging Ractive Event
  *
  * @param  {Object} node DOM Node
  * @param  {Function} fire Method to fire back data to ractive.on
  * @return {Object} Teardown method
- * @author  Nijiko Yonskai, https://github.com/sigod, Bogdan Pop
+ * @author Bogdan Pop
+ * previous work by Nijiko Yonskai, https://github.com/sigod, 
  * @copyright  2016
  */
-Ractive.events.dragndrop = function(node, fire) {
+Ractive.events.dragging = function(node, fire) {
 
   var props = {
     _forEach: function(a, callback, index) {
@@ -53,7 +54,7 @@ Ractive.events.dragndrop = function(node, fire) {
       }, 0);
 
     },
-    events: ["drag", "dragend", "dragenter", "dragexit", "dragleave", "dragover", "dragstart", "drop"]
+    events: ["drag", "dragend", "dragenter", "dragexit", "dragleave", "dragover", "dragstart"]
   }
 
   node.draggable = true;
