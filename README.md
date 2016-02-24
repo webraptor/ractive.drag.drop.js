@@ -16,8 +16,6 @@ After including [ractive](https://github.com/Rich-Harris/Ractive) and `ractive.d
 </ul>
 ```   
 
-By default it uses "move" for event.dataTransfer.effectAllowed ; To change this to "copy", add dragndrop-copy attribute to the element.
-
 **Code**
 
 Ractive Boilerplate
