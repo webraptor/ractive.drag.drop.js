@@ -33,7 +33,8 @@ Ractive.events.dragndrop = function(node, fire) {
         if (event.type === "dragstart") {
           event.dataTransfer.effectAllowed = this.hasAttribute("dragndrop-copy") ? "copy" : "move";
           event.dataTransfer.setData('Text', this.id);
-        }
+        }   
+        if (event.type==="dragover") event.preventDefault(); // allowing drops https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Drag_operations
 
         fire({
           node: node,
