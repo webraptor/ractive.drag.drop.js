@@ -9,12 +9,14 @@ After including [ractive](https://github.com/Rich-Harris/Ractive) and `ractive.d
 **Template**
 
 ```html
-<ul on-dragndrop='dragndrop-items'>
+<ul on-dragndrop='dragndrop-items' dragndrop-copy>
   {{#items:i}}
     <li>{{items[i]}}</li>
   {{/items}}
 </ul>
-```
+```   
+
+By default it uses "move" for event.dataTransfer.effectAllowed ; To change this to "copy", add dragndrop-copy attribute to the element.
 
 **Code**
 
