@@ -30,7 +30,7 @@ Ractive.events.dragging = function(node, fire) {
       }
     },
     _dragEvent: function(name) {
-      return function(event) {
+      return function(event) {    
         if (event.type === "dragstart") {
           event.dataTransfer.effectAllowed = "move";
           event.dataTransfer.setData('Text', this.id);
@@ -46,13 +46,14 @@ Ractive.events.dragging = function(node, fire) {
         });
       }
     },
-    _tearDown: function() {
+    _tearDown: { 
+      teardown: function() {
 
-      node.draggable = false;
-      props._forEach(props.events, function(element, key) {
-        node.removeEventListener(element, props._dragEvent(element));
-      }, 0);
-
+        node.draggable = false;
+        props._forEach(props.events, function(element, key) {
+          node.removeEventListener(element, props._dragEvent(element));
+        }, 0);
+      }
     },
     events: ["drag", "dragend", "dragenter", "dragexit", "dragleave", "dragover", "dragstart"]
   }
