@@ -40,7 +40,6 @@ Ractive.events.dragging = function(node, fire) {
         fire({
           node: node,
           name: name,
-          type: name.split('_')[1],
           target: this,
           original: event
         });
